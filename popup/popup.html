@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iDeploy Component Filler</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 iDeploy Filler</h1>
+      <p class="subtitle">Remplissage automatique des composants</p>
+    </div>
+    <div class="main">
+      <label for="components-input">Composants (un par ligne ou séparés par des virgules) :</label>
+      <textarea id="components-input" placeholder="b2m-bdd&#10;b2m-consultation&#10;b2m-gateway&#10;..."></textarea>
+      <div class="delay-setting">
+        <label for="delay-input">Délai entre composants (ms) :</label>
+        <input type="number" id="delay-input" value="500" min="200" max="3000" step="100">
+      </div>
+      <div class="buttons">
+        <button id="btn-fill" class="btn btn-success" title="Ajouter les composants dans le champ">✅ Remplir</button>
+        <button id="btn-clear" class="btn btn-danger" title="Supprimer tous les composants du champ">🗑️ Vider</button>
+      </div>
+      <div id="status-container" class="status-container hidden">
+        <div class="progress-bar-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <p id="status-text" class="status-text"></p>
+      </div>
+      <div id="error-container" class="error-container hidden">
+        <p id="error-text" class="error-text"></p>
+      </div>
+    </div>
+    <div class="history-section">
+      <div class="history-header">
+        <h2>📋 Historique</h2>
+        <button id="btn-clear-history" class="btn-link" title="Effacer l'historique">Effacer</button>
+      </div>
+      <div id="history-list" class="history-list">
+        <p class="history-empty">Aucun historique</p>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
